@@ -1,10 +1,47 @@
 # Unet-model-for-spleen-segmentation
 
-This study focused on the application of ultrasound imaging data acquired from patients' spleens, with the prime objective of applying computational algorithms for segmentation, identification, and precise localization of the spleen regions within the images. Such delineation facilitates subsequent quantitative assessments, notably the estimation of spleen dimensions, thereby potentially serving as an adjunctive diagnostic tool for discerning pathologic conditions such as infection.
+## Introduction
+The project is based on ultrasound imaging data for patient spleens and seeks to develop an algorithm for region of spleen segmentation, identify the regions, and localize them within the images in an accurate manner. In addition, spleen dimension avails different quantitative measurements that can be used as an adjunct to diagnostic stools in looking at pathologic conditions like infections.
 
-For example, the Unet network architecture is selected here as the core computational framework in view of its established effectiveness in medical image analysis, more specifically in applications requiring high-fidelity delineation of anatomical structures. In more detail, the Unet architecture is realized through an encoder-decoder paradigm augmented with skip connections that enable the model to effectively capture both global context and fine-grained details within the images.
+## Data Preparation
+Ultrasound Imaging Data
+The data of the ultrasound imaging from patients' spleens is used for the development and training of the segmentation algorithms.
+Steps in Data preprocessing are:
+Ultrasounds images will be normalized.
+Increases in variability and robustness in the data set.
+Now, split the data into a training set, a validation set, and a test set.
+Hyperparameters and Training
+U-Net Architecture
+The Unet network architecture was chosen as the base for the design of the computational framework because it has already shown good performance in the field of medical image analysis, mainly for tasks that involve high-fidelity delineation of anatomical structures. The Unet model follows an encoder/decoder paradigm facilitated with skip-connections, thus allowing global context and fine suture detail to be captured inside the images.
 
-Empirical evaluation of the implemented Unet model demonstrates favorable performance characteristics, as evidenced by attained metrics. Specifically, examination of model performance on a distinct test dataset reveals a commendable accuracy metric of 0.91, indicative of the model's proficiency in accurately segmenting spleen regions within ultrasound images. Such outcomes underscore the utility and efficacy of the Unet network architecture in the context of medical image segmentation tasks, thereby affirming its suitability for the present application.
-![plots](https://github.com/fmirzadeh99/Unet-model-for-spleen-segmentation/assets/169579231/cf519628-8fe9-4f38-be4b-66a3b10cf3db)
+![image](https://github.com/user-attachments/assets/a549f452-fad6-4647-a9fc-9ec14bb33fad)
+|:-:|
+|Augmented data
 
-![image](https://github.com/fmirzadeh99/Unet-model-for-spleen-segmentation/assets/169579231/c60ebff6-74c2-4aeb-93ad-86a388f38bb5)
+## Immediacy Parameters
+Key parameters for training include:
+Learning rate
+Group size
+Number of Epochs
+Dice coefficient loss or cross-entropy loss functions.
+Optimizer: Adam
+
+## Training Stage
+Train the Unet model with the prepared dataset. A description of the training loop is exhibit below:
+The loss function is to be minimized.
+Periodically evaluate the model on the validation set to monitor performance and tune the hyperparameters if necessary.
+Applying early stopping to prevent overfitting.
+Running Monitoring and Results
+Performance Indicators
+
+![image](https://github.com/user-attachments/assets/42734457-039e-4264-a54b-abd39ef4850c)
+|:-:|
+|Training and Validation accuracy 
+
+![image](https://github.com/user-attachments/assets/9a04d1c7-2d40-49a2-9911-32e65eace3f9)
+|:-:|
+|Training and Validation loss
+
+
+## Test Results
+Empirical verification of the promising results on a separate test dataset by the trained Unet model: This shows an accuracy of 0.91, suggesting a well-fitted model that can segment the region of spleen in ultrasound images. This further adds metrics for model performance audit, such as Dice coefficient and also precision-recall scores. Conclusion This attests to how the architecture of the Unet network would be useful and employed to segment medical images. A value of accuracy up to 0.91 has been derived, which supports it to be better in segmentation of spleen regions on ultrasound slices and thus holding ground for it for application in diagnostic processing pathologies related to the spleen.
